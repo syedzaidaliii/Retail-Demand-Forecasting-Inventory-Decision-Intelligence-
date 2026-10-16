@@ -1,0 +1,1 @@
+{"timestamp_utc": "2026-10-15T08:09:56", "run_number": 1, "model_sha256": "bdad92a08cba326acc68ba5918cd5436aec53ea0022254487432775a31547ea3", "config_sha256": "a3afa455397d7e30bbd5847bf0c4417bf48743156524047dd9724905c676231f", "holdout": "2016-04-25..2016-05-22", "rows": 27972, "series": 999, "WAPE_lgbm": 0.74432, "WAPE_ma28": 0.78927, "improvement_%": 5.695}

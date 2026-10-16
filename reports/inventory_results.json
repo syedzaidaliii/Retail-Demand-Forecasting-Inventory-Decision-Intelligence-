@@ -1,0 +1,331 @@
+{
+  "assumptions": {
+    "R": 7,
+    "L": 7,
+    "SL": 0.95,
+    "COST_FRAC": 0.7,
+    "HOLD_RATE": 0.25,
+    "PEN_MULT": 1.0,
+    "ORDER_COST": 2.0,
+    "MIN_HIST": 56,
+    "SIGMA_DAYS": 56
+  },
+  "base_scenario": {
+    "A: moving avg": {
+      "fill_rate_%": 92.985,
+      "stockout_day_rate_%": 3.02,
+      "avg_inventory_units": 13.748,
+      "avg_inventory_value_$": 34.61,
+      "holding_cost": 2649.705,
+      "ordering_cost": 20590.0,
+      "lost_sales_cost": 11244.771,
+      "total_cost": 34484.476,
+      "orders": 10295.0,
+      "total_cost_vs_A_%": 0.0
+    },
+    "B: LightGBM": {
+      "fill_rate_%": 93.485,
+      "stockout_day_rate_%": 2.672,
+      "avg_inventory_units": 13.461,
+      "avg_inventory_value_$": 33.974,
+      "holding_cost": 2600.991,
+      "ordering_cost": 20992.0,
+      "lost_sales_cost": 10323.124,
+      "total_cost": 33916.114,
+      "orders": 10496.0,
+      "total_cost_vs_A_%": -1.648
+    },
+    "Oracle (upper bound)": {
+      "fill_rate_%": 98.985,
+      "stockout_day_rate_%": 0.565,
+      "avg_inventory_units": 8.124,
+      "avg_inventory_value_$": 20.243,
+      "holding_cost": 1549.813,
+      "ordering_cost": 15022.0,
+      "lost_sales_cost": 1654.117,
+      "total_cost": 18225.93,
+      "orders": 7511.0,
+      "total_cost_vs_A_%": -47.147
+    }
+  },
+  "frontier_A": {
+    "0.5": {
+      "fill_rate_%": 82.316,
+      "stockout_day_rate_%": 8.783,
+      "avg_inventory_units": 8.59,
+      "avg_inventory_value_$": 21.495,
+      "holding_cost": 1645.616,
+      "ordering_cost": 12988.0,
+      "lost_sales_cost": 29213.613,
+      "total_cost": 43847.228,
+      "orders": 6494.0
+    },
+    "0.7": {
+      "fill_rate_%": 87.419,
+      "stockout_day_rate_%": 5.929,
+      "avg_inventory_units": 10.103,
+      "avg_inventory_value_$": 25.384,
+      "holding_cost": 1943.357,
+      "ordering_cost": 20440.0,
+      "lost_sales_cost": 20536.657,
+      "total_cost": 42920.014,
+      "orders": 10220.0
+    },
+    "0.8": {
+      "fill_rate_%": 89.531,
+      "stockout_day_rate_%": 4.833,
+      "avg_inventory_units": 11.08,
+      "avg_inventory_value_$": 27.865,
+      "holding_cost": 2133.276,
+      "ordering_cost": 20544.0,
+      "lost_sales_cost": 17004.91,
+      "total_cost": 39682.186,
+      "orders": 10272.0
+    },
+    "0.9": {
+      "fill_rate_%": 91.727,
+      "stockout_day_rate_%": 3.66,
+      "avg_inventory_units": 12.512,
+      "avg_inventory_value_$": 31.497,
+      "holding_cost": 2411.352,
+      "ordering_cost": 20590.0,
+      "lost_sales_cost": 13322.238,
+      "total_cost": 36323.59,
+      "orders": 10295.0
+    },
+    "0.95": {
+      "fill_rate_%": 92.985,
+      "stockout_day_rate_%": 3.02,
+      "avg_inventory_units": 13.748,
+      "avg_inventory_value_$": 34.61,
+      "holding_cost": 2649.705,
+      "ordering_cost": 20590.0,
+      "lost_sales_cost": 11244.771,
+      "total_cost": 34484.476,
+      "orders": 10295.0
+    },
+    "0.98": {
+      "fill_rate_%": 93.962,
+      "stockout_day_rate_%": 2.529,
+      "avg_inventory_units": 15.191,
+      "avg_inventory_value_$": 38.3,
+      "holding_cost": 2932.186,
+      "ordering_cost": 20590.0,
+      "lost_sales_cost": 9652.932,
+      "total_cost": 33175.119,
+      "orders": 10295.0
+    },
+    "0.99": {
+      "fill_rate_%": 94.428,
+      "stockout_day_rate_%": 2.31,
+      "avg_inventory_units": 16.165,
+      "avg_inventory_value_$": 40.739,
+      "holding_cost": 3118.962,
+      "ordering_cost": 20590.0,
+      "lost_sales_cost": 8887.06,
+      "total_cost": 32596.021,
+      "orders": 10295.0
+    },
+    "0.995": {
+      "fill_rate_%": 94.762,
+      "stockout_day_rate_%": 2.166,
+      "avg_inventory_units": 17.079,
+      "avg_inventory_value_$": 43.075,
+      "holding_cost": 3297.799,
+      "ordering_cost": 20590.0,
+      "lost_sales_cost": 8346.952,
+      "total_cost": 32234.751,
+      "orders": 10295.0
+    }
+  },
+  "frontier_B": {
+    "0.5": {
+      "fill_rate_%": 84.055,
+      "stockout_day_rate_%": 7.612,
+      "avg_inventory_units": 8.759,
+      "avg_inventory_value_$": 21.985,
+      "holding_cost": 1683.135,
+      "ordering_cost": 16474.0,
+      "lost_sales_cost": 26316.133,
+      "total_cost": 44473.268,
+      "orders": 8237.0
+    },
+    "0.7": {
+      "fill_rate_%": 88.091,
+      "stockout_day_rate_%": 5.448,
+      "avg_inventory_units": 10.018,
+      "avg_inventory_value_$": 25.205,
+      "holding_cost": 1929.667,
+      "ordering_cost": 18866.0,
+      "lost_sales_cost": 19476.355,
+      "total_cost": 40272.022,
+      "orders": 9433.0
+    },
+    "0.8": {
+      "fill_rate_%": 90.062,
+      "stockout_day_rate_%": 4.436,
+      "avg_inventory_units": 10.912,
+      "avg_inventory_value_$": 27.464,
+      "holding_cost": 2102.64,
+      "ordering_cost": 19868.0,
+      "lost_sales_cost": 16105.586,
+      "total_cost": 38076.226,
+      "orders": 9934.0
+    },
+    "0.9": {
+      "fill_rate_%": 92.234,
+      "stockout_day_rate_%": 3.333,
+      "avg_inventory_units": 12.264,
+      "avg_inventory_value_$": 30.921,
+      "holding_cost": 2367.26,
+      "ordering_cost": 20680.0,
+      "lost_sales_cost": 12420.086,
+      "total_cost": 35467.346,
+      "orders": 10340.0
+    },
+    "0.95": {
+      "fill_rate_%": 93.485,
+      "stockout_day_rate_%": 2.672,
+      "avg_inventory_units": 13.461,
+      "avg_inventory_value_$": 33.974,
+      "holding_cost": 2600.991,
+      "ordering_cost": 20992.0,
+      "lost_sales_cost": 10323.124,
+      "total_cost": 33916.114,
+      "orders": 10496.0
+    },
+    "0.98": {
+      "fill_rate_%": 94.502,
+      "stockout_day_rate_%": 2.194,
+      "avg_inventory_units": 14.869,
+      "avg_inventory_value_$": 37.554,
+      "holding_cost": 2875.116,
+      "ordering_cost": 21126.0,
+      "lost_sales_cost": 8649.846,
+      "total_cost": 32650.962,
+      "orders": 10563.0
+    },
+    "0.99": {
+      "fill_rate_%": 94.994,
+      "stockout_day_rate_%": 1.959,
+      "avg_inventory_units": 15.837,
+      "avg_inventory_value_$": 40.02,
+      "holding_cost": 3063.898,
+      "ordering_cost": 21148.0,
+      "lost_sales_cost": 7841.5,
+      "total_cost": 32053.399,
+      "orders": 10574.0
+    },
+    "0.995": {
+      "fill_rate_%": 95.345,
+      "stockout_day_rate_%": 1.79,
+      "avg_inventory_units": 16.726,
+      "avg_inventory_value_$": 42.273,
+      "holding_cost": 3236.337,
+      "ordering_cost": 21178.0,
+      "lost_sales_cost": 7282.206,
+      "total_cost": 31696.543,
+      "orders": 10589.0
+    }
+  },
+  "sensitivity_min_cost_B_vs_A_%": {
+    "pen x0.5": {
+      "L=3": 2.949,
+      "L=7": -0.021,
+      "L=14": 2.833
+    },
+    "pen x1.0": {
+      "L=3": -1.281,
+      "L=7": -1.67,
+      "L=14": -0.666
+    },
+    "pen x2.0": {
+      "L=3": -3.827,
+      "L=7": -3.95,
+      "L=14": -2.001
+    },
+    "pen x4.0": {
+      "L=3": -7.165,
+      "L=7": -6.517,
+      "L=14": -3.304
+    }
+  },
+  "sensitivity_equal_fill_B_vs_A_%": {
+    "pen x0.5": {
+      "L=3": 0.786,
+      "L=7": 0.323,
+      "L=14": -0.283
+    },
+    "pen x1.0": {
+      "L=3": 0.649,
+      "L=7": 0.149,
+      "L=14": -0.338
+    },
+    "pen x2.0": {
+      "L=3": 0.451,
+      "L=7": -0.071,
+      "L=14": -0.4
+    },
+    "pen x4.0": {
+      "L=3": 0.217,
+      "L=7": -0.294,
+      "L=14": -0.456
+    }
+  },
+  "sensitivity_oracle_vs_A_%": {
+    "pen x0.5": {
+      "L=3": -30.104,
+      "L=7": -37.997,
+      "L=14": -37.431
+    },
+    "pen x1.0": {
+      "L=3": -37.489,
+      "L=7": -43.459,
+      "L=14": -40.006
+    },
+    "pen x2.0": {
+      "L=3": -46.224,
+      "L=7": -51.012,
+      "L=14": -41.363
+    },
+    "pen x4.0": {
+      "L=3": -57.675,
+      "L=7": -59.515,
+      "L=14": -42.687
+    }
+  },
+  "blocks": {
+    "fold3": {
+      "series": 997,
+      "A_fill_%": 93.071,
+      "B_fill_%_at_SL95": 93.603,
+      "B_vs_A_equal_fill_%": -0.836,
+      "B_vs_A_min_cost_%": -2.318,
+      "oracle_vs_A_%": -43.064
+    },
+    "fold2": {
+      "series": 998,
+      "A_fill_%": 90.999,
+      "B_fill_%_at_SL95": 91.429,
+      "B_vs_A_equal_fill_%": 0.773,
+      "B_vs_A_min_cost_%": -0.82,
+      "oracle_vs_A_%": -46.344
+    },
+    "fold1": {
+      "series": 998,
+      "A_fill_%": 95.221,
+      "B_fill_%_at_SL95": 95.924,
+      "B_vs_A_equal_fill_%": -0.016,
+      "B_vs_A_min_cost_%": -2.902,
+      "oracle_vs_A_%": -39.062
+    },
+    "holdout": {
+      "series": 999,
+      "A_fill_%": 92.678,
+      "B_fill_%_at_SL95": 93.019,
+      "B_vs_A_equal_fill_%": 0.705,
+      "B_vs_A_min_cost_%": -0.835,
+      "oracle_vs_A_%": -44.915
+    }
+  }
+}

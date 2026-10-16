@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements*.txt
+      - name: Install dependencies
+        run: pip install -r requirements-dev.txt
+      - name: Lint
+        run: ruff check .
+      - name: Tests (features, data contract, inventory, service, API, model compatibility, dashboard)
+        run: pytest
+
+  docker:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Create the synthetic demo model and data
+        run: |
+          pip install -r requirements.txt
+          python scripts/make_demo_artifacts.py
+      - name: Build the API image
+        run: docker build --target api -t retail-api:ci .
+      - name: End-to-end smoke test of the container
+        run: |
+          docker run -d --name api -p 8000:8000 -e RETAIL_CONFIG=configs/demo.yaml -v "$PWD/data:/app/data:ro" retail-api:ci
+          for i in $(seq 1 30); do curl -sf http://localhost:8000/health && break || sleep 2; done
+          curl -sf http://localhost:8000/health | grep '"status":"ok"'
+          SERIES=$(curl -sf "http://localhost:8000/series?limit=1" | python -c "import sys,json; print(json.load(sys.stdin)['items'][0]['id'])")
+          curl -sf -X POST http://localhost:8000/forecast -H "Content-Type: application/json" -d "{\"series_id\": \"$SERIES\", \"horizon\": 7}" | grep total_forecast
+          docker logs api
+      - name: Build the dashboard image
+        run: docker build --target dashboard -t retail-dashboard:ci .

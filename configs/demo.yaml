@@ -1,0 +1,14 @@
+# Synthetic demo: runs the whole stack without the M5 files. The numbers are meaningless.
+active_model: demo_lgbm
+
+models:
+  demo_lgbm:
+    type: lightgbm
+    path: artifacts/demo/model.txt
+    config: artifacts/demo/model_config.json
+    metadata: artifacts/demo/metadata.json
+    horizon: 28
+
+data:
+  serving_panel: data/demo/serving_panel.parquet
+  reports_dir: reports

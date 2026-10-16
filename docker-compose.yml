@@ -1,0 +1,25 @@
+# docker compose up --build
+# Demo without M5 data (after `python scripts/make_demo_artifacts.py`):  $env:RETAIL_CONFIG="configs/demo.yaml"; docker compose up --build
+services:
+  api:
+    build:
+      context: .
+      target: api
+    ports:
+      - "8001:8000"
+    environment:
+      RETAIL_CONFIG: ${RETAIL_CONFIG:-configs/model.yaml}
+    volumes:
+      - ./data:/app/data:ro
+
+  dashboard:
+    build:
+      context: .
+      target: dashboard
+    ports:
+      - "8501:8501"
+    environment:
+      API_URL: http://api:8000
+    depends_on:
+      api:
+        condition: service_healthy

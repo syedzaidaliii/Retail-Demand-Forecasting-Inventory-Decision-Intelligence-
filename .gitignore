@@ -1,0 +1,33 @@
+# environments and caches
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+.env
+
+# M5 data and everything derived from it may not be redistributed (Kaggle competition rules)
+data/*
+!data/README.md
+*.parquet
+*.csv
+
+# generated demo artefacts
+artifacts/demo/
+
+
+# Secrets and environment variables
+.env.*
+!.env.example
+
+# Large datasets and generated panels
+data/raw/
+data/serving/
+data/processed/*.parquet
+
+# Notebook-generated files
+.ipynb_checkpoints/
+
+# Logs
+*.log

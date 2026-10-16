@@ -1,0 +1,11 @@
+{
+  "name": "lgbm_h28",
+  "version": "kaggle_lgbm_h28",
+  "trained_through": null,
+  "sha256": "1007471204460c4caa5965b3e9fc0b81e4753a6ee9e9e31863090ebc78805ca9",
+  "registered_at_utc": "2026-10-16T18:09:43",
+  "source_files": [
+    "lgbm_final_h28.txt",
+    "lgbm_config_h28.json"
+  ]
+}

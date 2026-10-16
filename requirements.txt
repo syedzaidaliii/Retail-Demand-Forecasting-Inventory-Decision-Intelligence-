@@ -1,0 +1,10 @@
+# Runtime dependencies of the API (version ranges; freeze exact versions with `pip freeze > requirements.lock` once tests pass)
+numpy>=1.26,<3
+pandas>=2.2,<4
+pyarrow>=15
+lightgbm>=4.3,<5
+fastapi>=0.110
+uvicorn>=0.29
+pydantic>=2.6,<3
+pyyaml>=6.0
+scikit-learn>=1.4

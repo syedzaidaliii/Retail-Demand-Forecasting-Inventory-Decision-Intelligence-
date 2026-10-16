@@ -1,0 +1,253 @@
+{
+  "full_table": {
+    "naive_lag28": {
+      "n_folds": 3,
+      "WAPE": 0.95047,
+      "MAE": 1.30858,
+      "bias_%": -1.815,
+      "MASE": 1.08043,
+      "WAPE_7d_sum": 0.48411,
+      "WAPE_28d_sum": 0.30341,
+      "WAPE_f1": 0.96326,
+      "WAPE_f2": 0.96211,
+      "WAPE_f3": 0.92605,
+      "WAPE_vs_best_baseline_%": -17.61526
+    },
+    "moving_avg_28": {
+      "n_folds": 3,
+      "WAPE": 0.80812,
+      "MAE": 1.11264,
+      "bias_%": -4.24888,
+      "MASE": 0.95297,
+      "WAPE_7d_sum": 0.43945,
+      "WAPE_28d_sum": 0.32151,
+      "WAPE_f1": 0.81395,
+      "WAPE_f2": 0.82604,
+      "WAPE_f3": 0.78437,
+      "WAPE_vs_best_baseline_%": 0.0
+    },
+    "same_weekday_mean": {
+      "n_folds": 3,
+      "WAPE": 0.83095,
+      "MAE": 1.14402,
+      "bias_%": -3.52171,
+      "MASE": 0.97425,
+      "WAPE_7d_sum": 0.43325,
+      "WAPE_28d_sum": 0.31209,
+      "WAPE_f1": 0.83302,
+      "WAPE_f2": 0.84673,
+      "WAPE_f3": 0.81309,
+      "WAPE_vs_best_baseline_%": -2.82498
+    },
+    "croston_sba": {
+      "n_folds": 3,
+      "WAPE": 0.84676,
+      "MAE": 1.16577,
+      "bias_%": -2.67411,
+      "MASE": 1.00117,
+      "WAPE_7d_sum": 0.47035,
+      "WAPE_28d_sum": 0.34955,
+      "WAPE_f1": 0.84654,
+      "WAPE_f2": 0.86231,
+      "WAPE_f3": 0.83143,
+      "WAPE_vs_best_baseline_%": -4.78142
+    },
+    "lgbm_final": {
+      "n_folds": 3,
+      "WAPE": 0.76561,
+      "MAE": 1.05403,
+      "bias_%": -4.39921,
+      "MASE": 0.93504,
+      "WAPE_7d_sum": 0.39061,
+      "WAPE_28d_sum": 0.27749,
+      "WAPE_f1": 0.75687,
+      "WAPE_f2": 0.78391,
+      "WAPE_f3": 0.75605,
+      "WAPE_vs_best_baseline_%": 5.26023
+    },
+    "chronos2_uni": {
+      "n_folds": 3,
+      "WAPE": 0.71207,
+      "MAE": 0.9803,
+      "bias_%": -31.16717,
+      "MASE": 0.79933,
+      "WAPE_7d_sum": 0.47403,
+      "WAPE_28d_sum": 0.4136,
+      "WAPE_f1": 0.70115,
+      "WAPE_f2": 0.72824,
+      "WAPE_f3": 0.70683,
+      "WAPE_vs_best_baseline_%": 11.88509
+    },
+    "chronos2_cov": {
+      "n_folds": 3,
+      "WAPE": 0.71732,
+      "MAE": 0.98739,
+      "bias_%": -28.87457,
+      "MASE": 0.80132,
+      "WAPE_7d_sum": 0.4793,
+      "WAPE_28d_sum": 0.42116,
+      "WAPE_f1": 0.71239,
+      "WAPE_f2": 0.7164,
+      "WAPE_f3": 0.72315,
+      "WAPE_vs_best_baseline_%": 11.2365
+    },
+    "tft": {
+      "n_folds": 3,
+      "WAPE": 0.95875,
+      "MAE": 1.3199,
+      "bias_%": 33.34267,
+      "MASE": 1.61054,
+      "WAPE_7d_sum": 0.59427,
+      "WAPE_28d_sum": 0.50258,
+      "WAPE_f1": 0.96417,
+      "WAPE_f2": 0.96809,
+      "WAPE_f3": 0.94398,
+      "WAPE_vs_best_baseline_%": -18.63906
+    },
+    "ens_lgbm_chronos": {
+      "n_folds": 3,
+      "WAPE": 0.7294,
+      "MAE": 1.0041,
+      "bias_%": -16.63689,
+      "MASE": 0.86034,
+      "WAPE_7d_sum": 0.40044,
+      "WAPE_28d_sum": 0.31094,
+      "WAPE_f1": 0.72327,
+      "WAPE_f2": 0.73728,
+      "WAPE_f3": 0.72765,
+      "WAPE_vs_best_baseline_%": 9.74112
+    },
+    "ens_all3": {
+      "n_folds": 3,
+      "WAPE": 0.79737,
+      "MAE": 1.09771,
+      "bias_%": 0.02297,
+      "MASE": 1.10384,
+      "WAPE_7d_sum": 0.41111,
+      "WAPE_28d_sum": 0.30345,
+      "WAPE_f1": 0.79337,
+      "WAPE_f2": 0.80764,
+      "WAPE_f3": 0.7911,
+      "WAPE_vs_best_baseline_%": 1.33008
+    }
+  },
+  "rank_table": {
+    "lgbm_final": {
+      "rank_WAPE": 4.0,
+      "rank_7d_WAPE": 1.0,
+      "rank_28d_WAPE": 1.0,
+      "rank_MASE": 4.0,
+      "rank_abs_bias": 3.0,
+      "avg_rank": 2.6,
+      "sec_per_fold": null
+    },
+    "ens_lgbm_chronos": {
+      "rank_WAPE": 3.0,
+      "rank_7d_WAPE": 2.0,
+      "rank_28d_WAPE": 3.0,
+      "rank_MASE": 3.0,
+      "rank_abs_bias": 4.0,
+      "avg_rank": 3.0,
+      "sec_per_fold": null
+    },
+    "ens_all3": {
+      "rank_WAPE": 5.0,
+      "rank_7d_WAPE": 3.0,
+      "rank_28d_WAPE": 2.0,
+      "rank_MASE": 6.0,
+      "rank_abs_bias": 1.0,
+      "avg_rank": 3.4,
+      "sec_per_fold": null
+    },
+    "chronos2_uni": {
+      "rank_WAPE": 1.0,
+      "rank_7d_WAPE": 5.0,
+      "rank_28d_WAPE": 5.0,
+      "rank_MASE": 1.0,
+      "rank_abs_bias": 6.0,
+      "avg_rank": 3.6,
+      "sec_per_fold": 4.708
+    },
+    "moving_avg_28": {
+      "rank_WAPE": 6.0,
+      "rank_7d_WAPE": 4.0,
+      "rank_28d_WAPE": 4.0,
+      "rank_MASE": 5.0,
+      "rank_abs_bias": 2.0,
+      "avg_rank": 4.2,
+      "sec_per_fold": null
+    },
+    "chronos2_cov": {
+      "rank_WAPE": 2.0,
+      "rank_7d_WAPE": 6.0,
+      "rank_28d_WAPE": 6.0,
+      "rank_MASE": 2.0,
+      "rank_abs_bias": 5.0,
+      "avg_rank": 4.2,
+      "sec_per_fold": 36.135
+    },
+    "tft": {
+      "rank_WAPE": 7.0,
+      "rank_7d_WAPE": 7.0,
+      "rank_28d_WAPE": 7.0,
+      "rank_MASE": 7.0,
+      "rank_abs_bias": 7.0,
+      "avg_rank": 7.0,
+      "sec_per_fold": 280.076
+    }
+  },
+  "prob_table": {
+    "lgbm": {
+      "pinball_P10": 0.1333,
+      "pinball_P50": 0.4911,
+      "pinball_P90": 0.3157,
+      "P90_calibration_%": 88.8992,
+      "coverage_P10_P90_%": 82.2287,
+      "avg_width": 3.0145
+    },
+    "chronos2_uni": {
+      "pinball_P10": 0.1379,
+      "pinball_P50": 0.4838,
+      "pinball_P90": 0.3182,
+      "P90_calibration_%": 89.9084,
+      "coverage_P10_P90_%": 77.5694,
+      "avg_width": 2.9801
+    },
+    "chronos2_cov": {
+      "pinball_P10": 0.142,
+      "pinball_P50": 0.4916,
+      "pinball_P90": 0.3211,
+      "P90_calibration_%": 89.096,
+      "coverage_P10_P90_%": 72.9423,
+      "avg_width": 2.8969
+    },
+    "tft": {
+      "pinball_P10": 0.18,
+      "pinball_P50": 0.6215,
+      "pinball_P90": 0.3579,
+      "P90_calibration_%": 93.6802,
+      "coverage_P10_P90_%": 38.3231,
+      "avg_width": 3.416
+    }
+  },
+  "timing_sec": {
+    "chronos2_uni_fold1": 5.7,
+    "chronos2_uni_fold2": 4.2,
+    "chronos2_uni_fold3": 4.2,
+    "chronos2_cov_fold1": 33.6,
+    "chronos2_cov_fold2": 35.6,
+    "chronos2_cov_fold3": 39.2,
+    "tft_fold1": 278.5,
+    "tft_fold2": 280.5,
+    "tft_fold3": 281.2
+  },
+  "tft_loss": "tweedie",
+  "tft_steps": 1500,
+  "chronos_error": null,
+  "tft_error": null,
+  "eligible_series": {
+    "1": 998,
+    "2": 998,
+    "3": 997
+  }
+}

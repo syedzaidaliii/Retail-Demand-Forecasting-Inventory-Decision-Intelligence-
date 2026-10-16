@@ -1,0 +1,11 @@
+active_model: lgbm_h28
+models:
+  lgbm_h28:
+    type: lightgbm
+    path: artifacts/lgbm_h28/model.txt
+    config: artifacts/lgbm_h28/model_config.json
+    metadata: artifacts/lgbm_h28/metadata.json
+    horizon: 28
+data:
+  serving_panel: data/serving/serving_panel.parquet
+  reports_dir: reports
